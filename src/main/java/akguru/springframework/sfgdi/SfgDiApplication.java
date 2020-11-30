@@ -1,9 +1,6 @@
 package akguru.springframework.sfgdi;
 
-import akguru.springframework.sfgdi.controllers.ConstructorInjectedController;
-import akguru.springframework.sfgdi.controllers.MyController;
-import akguru.springframework.sfgdi.controllers.PropertyInjectedController;
-import akguru.springframework.sfgdi.controllers.SetterInjectedController;
+import akguru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -35,6 +32,9 @@ public class SfgDiApplication {
 		MyController myController = (MyController)ctx.getBean("myController");
 		System.out.println(".............Primary Bean");
 		System.out.println(myController.sayHello());
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 
 	}
